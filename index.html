@@ -1,729 +1,214 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark scroll-smooth">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Alexandre Tattoo | Estúdio Privado</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            DEFAULT: '#C5A059',
-                            light: '#E0C07B',
-                            dark: '#9A7A38',
-                        },
-                        dark: {
-                            900: '#0A0A0C',
-                            800: '#121215',
-                            700: '#1C1C21',
-                            600: '#2A2A32',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Cinzel', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0A0A0C;
-            color: #E2E8F0;
-        }
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
-        }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF 0%, #C5A059 50%, #9A7A38 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-border-glow {
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0A0A0C;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2A2A32;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #C5A059;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caio Alexandre Tattoo | Estúdio Privado</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-dark-900 text-gray-200 antialiased selection:bg-gold selection:text-black">
+<body>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/5511961920170?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20uma%20tatuagem." 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group gold-border-glow"
-       title="Falar no WhatsApp">
-        <i class="fab fa-whatsapp text-3xl"></i>
-        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-semibold text-sm pl-0 group-hover:pl-2">
-            Agendar Horário
-        </span>
-    </a>
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- LOGO / BRANDING -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center bg-dark-800 text-gold group-hover:border-white transition-colors duration-300">
-                    <span class="font-cinzel text-xl font-bold tracking-widest">CAT</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-cinzel text-lg font-bold tracking-wider text-white group-hover:text-gold transition-colors">CAIO ALEXANDRE</span>
-                    <span class="text-xs text-gold tracking-widest uppercase">Tattoo Studio</span>
-                </div>
-            </a>
-
-            <!-- DESKTOP NAV -->
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <a href="#inicio" class="hover:text-gold transition-colors">Início</a>
-                <a href="#galeria" class="hover:text-gold transition-colors">Galeria</a>
-                <a href="#agendamento" class="hover:text-gold transition-colors">Agendamento</a>
-                <a href="#live" class="hover:text-gold transition-colors">Live YouTube</a>
-                <a href="#forum" class="hover:text-gold transition-colors">Fórum</a>
-                <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
-            </nav>
-
-            <!-- RIGHT HEADER ACTIONS -->
-            <div class="hidden md:flex items-center gap-4">
-                <button onclick="toggleAdminModal()" class="text-xs border border-dark-600 hover:border-gold px-3 py-1.5 rounded-lg text-gray-400 hover:text-gold transition-all">
-                    <i class="fas fa-lock mr-1"></i> Admin
-                </button>
-                <a href="https://wa.me/5511961920170" target="_blank" class="bg-gold hover:bg-gold-light text-black font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-300 flex items-center gap-2 shadow-lg">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>+55 11 96192-0170</span>
-                </a>
-            </div>
-
-            <!-- MOBILE MENU BUTTON -->
-            <button id="mobileMenuBtn" class="md:hidden text-2xl text-gray-300 hover:text-gold focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobileMenu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="block py-2 text-gray-300 hover:text-gold">Início</a>
-            <a href="#galeria" class="block py-2 text-gray-300 hover:text-gold">Galeria</a>
-            <a href="#agendamento" class="block py-2 text-gray-300 hover:text-gold">Agendamento</a>
-            <a href="#live" class="block py-2 text-gray-300 hover:text-gold">Live YouTube</a>
-            <a href="#forum" class="block py-2 text-gray-300 hover:text-gold">Fórum</a>
-            <a href="#contato" class="block py-2 text-gray-300 hover:text-gold">Contato</a>
-            <div class="pt-2 border-t border-dark-700 flex flex-col gap-2">
-                <button onclick="toggleAdminModal()" class="w-full text-left py-2 text-xs text-gold">
-                    <i class="fas fa-lock mr-1"></i> Área Administrativa
-                </button>
-                <a href="https://wa.me/5511961920170" target="_blank" class="w-full text-center bg-gold text-black font-bold py-2 rounded-lg">
-                    <i class="fab fa-whatsapp mr-1"></i> WhatsApp Studio
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 border-b border-dark-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- HERO TEXT -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-700 border border-gold/30 text-xs font-semibold text-gold uppercase tracking-widest">
-                        <i class="fas fa-gem"></i> Estúdio Privado de Tatuagem
-                    </div>
-                    
-                    <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-                        Precisão, Arte e <br class="hidden sm:inline"/>
-                        <span class="gold-gradient-text">Identidade Única</span>
-                    </h1>
-                    
-                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Caio Alexandre Tattoo. Tatuagens artísticas sob medida, desenvolvidas em ambiente exclusivo e seguro. Transforme suas ideias e histórias em arte atemporal na pele.
-                    </p>
-
-                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#agendamento" class="bg-gold hover:bg-gold-light text-black font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 text-base">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Solicitar Agendamento</span>
-                        </a>
-                        <a href="https://instagram.com/caioarttattoo" target="_blank" class="border border-dark-600 hover:border-gold text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:bg-dark-800 text-base">
-                            <i class="fab fa-instagram text-xl text-gold"></i>
-                            <span>@caioarttattoo</span>
-                        </a>
-                    </div>
-
-                    <!-- STATS / HIGHLIGHTS -->
-                    <div class="pt-8 border-t border-dark-700/60 grid grid-cols-3 gap-4 text-center">
-                        <div class="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                            <span class="font-cinzel text-2xl font-bold text-gold block">230+</span>
-                            <span class="text-xs text-gray-400">Projetos Publicados</span>
-                        </div>
-                        <div class="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                            <span class="font-cinzel text-2xl font-bold text-gold block">5K+</span>
-                            <span class="text-xs text-gray-400">Seguidores</span>
-                        </div>
-                        <div class="bg-dark-800/50 p-4 rounded-xl border border-dark-700">
-                            <span class="font-cinzel text-2xl font-bold text-gold block">100%</span>
-                            <span class="text-xs text-gray-400">Exclusividade</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HERO PROFILE CARD -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md bg-dark-800 border border-dark-700 p-6 rounded-2xl shadow-2xl gold-border-glow">
-                        <div class="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold p-1 bg-dark-900">
-                            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=500&q=80" 
-                                 alt="Caio Alexandre Tattoo" 
-                                 class="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        
-                        <div class="text-center space-y-2">
-                            <h3 class="font-cinzel text-2xl font-bold text-white">Caio Alexandre</h3>
-                            <p class="text-gold text-sm font-medium">Artista & Tatuador</p>
-                            <p class="text-xs text-gray-400 italic font-serif py-2">"CP ° pingere et es 🔞"</p>
-                        </div>
-
-                        <div class="mt-6 space-y-3 pt-4 border-t border-dark-700 text-sm">
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fas fa-map-marker-alt text-gold w-5"></i>
-                                <span>Estúdio Privado (Atendimento com Hora Marcada)</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fas fa-envelope text-gold w-5"></i>
-                                <span>caiocadp@hotmail.com</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fab fa-whatsapp text-gold w-5"></i>
-                                <span>+55 11 96192-0170</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO / GALLERY SECTION -->
-    <section id="galeria" class="py-20 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mb-2">Galeria de Trabalhos</h2>
-                    <p class="text-gray-400">Confira alguns dos trabalhos executados no estúdio.</p>
-                </div>
-                <div class="mt-4 md:mt-0 flex gap-2">
-                    <button onclick="filterGallery('todos')" class="filter-btn active bg-gold text-black font-semibold px-4 py-2 rounded-lg text-sm">Todos</button>
-                    <button onclick="filterGallery('blackwork')" class="filter-btn bg-dark-800 text-gray-300 border border-dark-700 hover:border-gold px-4 py-2 rounded-lg text-sm">Blackwork</button>
-                    <button onclick="filterGallery('realismo')" class="filter-btn bg-dark-800 text-gray-300 border border-dark-700 hover:border-gold px-4 py-2 rounded-lg text-sm">Realismo</button>
-                    <button onclick="filterGallery('lettering')" class="filter-btn bg-dark-800 text-gray-300 border border-dark-700 hover:border-gold px-4 py-2 rounded-lg text-sm">Lettering</button>
-                </div>
-            </div>
-
-            <!-- GALLERY GRID -->
-            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Dynamically populated via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- APPOINTMENT / ORÇAMENTO SECTION -->
-    <section id="agendamento" class="py-20 bg-dark-800 border-y border-dark-700">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mb-2">Agende sua Sessão</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">Preencha o formulário para enviar os detalhes da sua ideia diretamente para o WhatsApp do Caio Alexandre.</p>
-            </div>
-
-            <form id="bookingForm" onsubmit="handleBooking(event)" class="bg-dark-900 border border-dark-700 p-6 sm:p-10 rounded-2xl shadow-xl space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Seu Nome Completo *</label>
-                        <input type="text" id="clientName" required placeholder="Ex: João Silva" 
-                               class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">WhatsApp para Contato *</label>
-                        <input type="tel" id="clientPhone" required placeholder="(11) 99999-9999" 
-                               class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Estilo de Tatuagem</label>
-                        <select id="tattooStyle" class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                            <option value="Blackwork / Fechamento">Blackwork / Fechamento</option>
-                            <option value="Realismo / Sombreado">Realismo / Sombreado</option>
-                            <option value="Lettering / Escrita">Lettering / Escrita</option>
-                            <option value="Fine Line / Delicada">Fine Line / Delicada</option>
-                            <option value="Reforma / Cover-up">Reforma / Cover-up</option>
-                            <option value="Outro Estilo">Outro Estilo</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Local do Corpo & Tamanho Aprox.</label>
-                        <input type="text" id="bodyPlacement" required placeholder="Ex: Antebraço, ~15cm" 
-                               class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Data Preferencial</label>
-                        <input type="date" id="preferredDate" required
-                               class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Horário Preferencial</label>
-                        <select id="preferredTime" class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors">
-                            <option value="Manhã (10h as 13h)">Manhã (10h as 13h)</option>
-                            <option value="Tarde (14h as 18h)">Tarde (14h as 18h)</option>
-                            <option value="Noite (18h as 21h)">Noite (18h as 21h)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Descrição da Ideia / Detalhes</label>
-                    <textarea id="tattooIdea" rows="4" placeholder="Descreva sua ideia, significados, referências, etc." 
-                              class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-gold hover:bg-gold-light text-black font-bold py-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-xl">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                    <span>Enviar Pré-Agendamento via WhatsApp</span>
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- LIVE YOUTUBE SECTION -->
-    <section id="live" class="py-20 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <span class="text-red-500 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2 mb-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span> Live & Processo Criativo
-                </span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">Sessão ao Vivo / Bastidores</h2>
-                <p class="text-gray-400 mt-2">Acompanhe as lives e transmissões de sessões pelo YouTube.</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto bg-dark-800 p-3 sm:p-4 rounded-2xl border border-dark-700 shadow-2xl">
-                <div class="relative w-full overflow-hidden rounded-xl pt-[56.25%]">
-                    <!-- Embedded YouTube video/stream placeholder -->
-                    <iframe class="absolute top-0 left-0 w-full h-full" 
-                            src="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk" 
-                            title="Caio Art Tattoo YouTube Live" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORUM / COMMUNITY COMMENTS SECTION -->
-    <section id="forum" class="py-20 bg-dark-800 border-t border-dark-700">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mb-2">Fórum & Avaliações</h2>
-                <p class="text-gray-400">Deixe sua dúvida, depoimento ou interaja com outros clientes.</p>
-            </div>
-
-            <!-- ADD COMMENT FORM -->
-            <form onsubmit="handleAddComment(event)" class="bg-dark-900 border border-dark-700 p-6 rounded-xl mb-10 space-y-4">
-                <h3 class="text-lg font-bold text-white mb-2">Deixar um Comentário</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" id="commentAuthor" required placeholder="Seu Nome" 
-                           class="bg-dark-800 border border-dark-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-gold">
-                    <select id="commentRating" class="bg-dark-800 border border-dark-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-gold">
-                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
-                        <option value="3">⭐⭐⭐ (3/5)</option>
-                    </select>
-                </div>
-                <textarea id="commentText" required rows="3" placeholder="Escreva seu comentário ou pergunta..." 
-                          class="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-gold"></textarea>
-                <button type="submit" class="bg-gold hover:bg-gold-light text-black font-bold px-6 py-2.5 rounded-lg text-sm transition-all">
-                    Publicar Comentário
-                </button>
-            </form>
-
-            <!-- COMMENT LIST -->
-            <div id="commentsList" class="space-y-4">
-                <!-- Dynamically filled by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER / CONTACT INFO -->
-    <footer id="contato" class="bg-dark-900 border-t border-dark-700 pt-16 pb-8 text-gray-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                
-                <!-- BRAND INFO -->
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-dark-800 text-gold">
-                            <span class="font-cinzel text-lg font-bold">CAT</span>
-                        </div>
-                        <span class="font-cinzel text-xl font-bold text-white">Caio Alexandre Tattoo</span>
-                    </div>
-                    <p class="text-sm text-gray-400 max-w-sm">
-                        Criador de conteúdo digital e tatuador artístico. Estúdio privado focado em peças exclusivas com total biossegurança.
-                    </p>
-                    <div class="flex space-x-4 pt-2">
-                        <a href="https://instagram.com/caioarttattoo" target="_blank" class="w-10 h-10 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/5511961920170" target="_blank" class="w-10 h-10 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="mailto:caiocadp@hotmail.com" class="w-10 h-10 rounded-full bg-dark-800 border border-dark-700 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all">
-                            <i class="far fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- CONTACTS -->
-                <div>
-                    <h4 class="font-cinzel text-white font-bold mb-4">Contatos</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2">
-                            <i class="fab fa-whatsapp text-gold"></i>
-                            <a href="https://wa.me/5511961920170" class="hover:text-white transition-colors">+55 11 96192-0170</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="far fa-envelope text-gold"></i>
-                            <a href="mailto:caiocadp@hotmail.com" class="hover:text-white transition-colors">caiocadp@hotmail.com</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fab fa-instagram text-gold"></i>
-                            <a href="https://instagram.com/caioarttattoo" target="_blank" class="hover:text-white transition-colors">@caioarttattoo</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- ATENDIMENTO -->
-                <div>
-                    <h4 class="font-cinzel text-white font-bold mb-4">Funcionamento</h4>
-                    <p class="text-sm text-gray-400">
-                        Atendimento exclusivo sob agendamento prévio.
-                    </p>
-                    <p class="text-xs text-gold mt-3 font-semibold">
-                        • Estúdio Privado (São Paulo/SP)
-                    </p>
-                </div>
-            </div>
-
-            <div class="border-t border-dark-800 pt-8 text-center text-xs text-gray-500">
-                <p>&copy; <span id="year"></span> Caio Alexandre Tattoo. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ADMIN DASHBOARD MODAL -->
-    <div id="adminModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-dark-800 border border-dark-700 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
-            
-            <div class="p-6 bg-dark-900 border-b border-dark-700 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-user-shield text-gold text-xl"></i>
-                    <h3 class="font-cinzel text-xl font-bold text-white">Painel Administrativo</h3>
-                </div>
-                <button onclick="toggleAdminModal()" class="text-gray-400 hover:text-white text-xl">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <div class="p-6 overflow-y-auto space-y-8 flex-1">
-                <!-- ADD PORTFOLIO PHOTO FORM -->
-                <div class="space-y-4">
-                    <h4 class="text-sm font-bold text-gold uppercase tracking-wider">Adicionar Nova Foto na Galeria</h4>
-                    <form onsubmit="handleAdminAddPhoto(event)" class="space-y-3">
-                        <div>
-                            <label class="block text-xs text-gray-400 mb-1">Título da Tatuagem</label>
-                            <input type="text" id="adminPhotoTitle" required placeholder="Ex: Catrina Sombreada" 
-                                   class="w-full bg-dark-900 border border-dark-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold">
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-1">Categoria</label>
-                                <select id="adminPhotoCategory" class="w-full bg-dark-900 border border-dark-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold">
-                                    <option value="blackwork">Blackwork</option>
-                                    <option value="realismo">Realismo</option>
-                                    <option value="lettering">Lettering</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-1">URL da Imagem</label>
-                                <input type="url" id="adminPhotoUrl" required placeholder="https://..." 
-                                       class="w-full bg-dark-900 border border-dark-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-gold">
-                            </div>
-                        </div>
-                        <button type="submit" class="bg-gold text-black font-bold text-xs px-4 py-2 rounded-lg hover:bg-gold-light transition-all">
-                            Adicionar Tatuagem
-                        </button>
-                    </form>
-                </div>
-
-                <!-- ADMIN LOGS / APPOINTMENTS LIST -->
-                <div class="space-y-4 pt-4 border-t border-dark-700">
-                    <h4 class="text-sm font-bold text-gold uppercase tracking-wider">Agendamentos Recebidos (Locais)</h4>
-                    <div id="adminAppointmentsList" class="space-y-2 text-xs text-gray-300">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 bg-dark-900 border-t border-dark-700 text-right">
-                <button onclick="toggleAdminModal()" class="px-4 py-2 bg-dark-700 text-white rounded-lg text-xs hover:bg-dark-600 transition-all">
-                    Fechar
-                </button>
-            </div>
-        </div>
+  <!-- NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-cross"></i></div>
+        <span>CAIO ALEXANDRE</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
+        <li><a href="#live">Live YouTube</a></li>
+        <li><a href="#forum">Comunidade</a></li>
+      </ul>
+      <button class="admin-btn" onclick="toggleAdminModal()">
+        <i class="fa-solid fa-lock"></i> Painel Admin
+      </button>
     </div>
+  </nav>
 
-    <!-- JAVASCRIPT APP LOGIC -->
-    <script>
-        // Set dynamic current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-logo-circle">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+      <h1>Caio Alexandre Tattoo</h1>
+      <p class="subtitle">Tatuagem Artística • Estúdio Privado</p>
+      <p class="latin-quote">✦ pingere et es ✦</p>
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+      <div class="stats-bar">
+        <div class="stat-item">
+          <strong>232</strong>
+          <span>Publicações</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <strong>5.003</strong>
+          <span>Seguidores</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <strong>5.877</strong>
+          <span>Acompanhando</span>
+        </div>
+      </div>
 
-        // Default Gallery Items Data
-        let galleryData = [
-            {
-                id: 1,
-                title: "Fechamento de Braço Gótico",
-                category: "blackwork",
-                image: "https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 2,
-                title: "Caveira e Rosas Realista",
-                category: "realismo",
-                image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 3,
-                title: "Lettering Exclusivo CP",
-                category: "lettering",
-                image: "https://images.unsplash.com/photo-1565058384351-40be357a70a8?auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 4,
-                title: "Estilo Geométrico & Sombra",
-                category: "blackwork",
-                image: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=80"
-            }
-        ];
+      <div class="hero-buttons">
+        <a href="https://wa.me/5511961920170?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Orçamento no WhatsApp
+        </a>
+        <a href="https://instagram.com/caioarttattoo" target="_blank" class="btn btn-instagram">
+          <i class="fa-brands fa-instagram"></i> Ver Instagram
+        </a>
+      </div>
+    </div>
+  </header>
 
-        // Comments Forum Initial Data
-        let forumComments = [
-            {
-                author: "Rodrigo M.",
-                rating: 5,
-                text: "Trabalho absurdo do Caio! Fiz meu fechamento de costas com ele, traço extremamente firme e higiene nota 10.",
-                date: "Há 2 dias"
-            },
-            {
-                author: "Camila V.",
-                rating: 5,
-                text: "Estúdio super reservado e confortável. Atendimento e criação da arte 100% personalizada.",
-                date: "Há 1 semana"
-            }
-        ];
+  <main class="container">
 
-        // Appointments Local Storage Store
-        let localAppointments = [];
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="card">
+      <h2 class="section-title"><i class="fa-solid fa-compass"></i> Sobre o Estúdio</h2>
+      <p>Estúdio privado focado em tatuagem artística, precisão, arte e identidade[span_0](start_span)[span_0](end_span). Atendimento exclusivo com agendamento prévio para garantir a máxima qualidade e higiene no seu projeto.</p>
+      <div class="contact-info-list">
+        <div><i class="fa-solid fa-phone"></i> +55 11 96192-0170[span_1](start_span)[span_1](end_span)</div>
+        <div><i class="fa-solid fa-envelope"></i> caiocadp@hotmail.com[span_2](start_span)[span_2](end_span)</div>
+        <div><i class="fa-solid fa-location-dot"></i> São Paulo - SP</div>
+      </div>
+    </section>
 
-        // RENDER GALLERY
-        function renderGallery(filter = 'todos') {
-            const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = '';
+    <!-- GALERIA / TRABALHOS -->
+    <section id="galeria" class="card">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-images"></i> Galeria de Trabalhos</h2>
+        <span class="badge">Atualizado frequentemente</span>
+      </div>
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Itens carregados via JS -->
+      </div>
+    </section>
 
-            const filtered = filter === 'todos' 
-                ? galleryData 
-                : galleryData.filter(item => item.category === filter);
+    <!-- AGENDAMENTO -->
+    <section id="agendamento" class="card">
+      <h2 class="section-title"><i class="fa-solid fa-calendar-check"></i> Solicitar Agendamento</h2>
+      <p class="section-desc">Preencha as informações abaixo para direcionar o seu atendimento diretamente para o WhatsApp do estúdio.</p>
 
-            filtered.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "group relative bg-dark-800 rounded-xl overflow-hidden border border-dark-700 shadow-lg hover:border-gold transition-all duration-300";
-                card.innerHTML = `
-                    <div class="aspect-square w-full overflow-hidden bg-dark-900">
-                        <img src="${item.image}" alt="${item.title}" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
-                             onerror="this.src='https://placehold.co/600x600/121215/C5A059?text=Tattoo+Art'">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                        <span class="text-xs text-gold uppercase tracking-wider font-semibold">${item.category}</span>
-                        <h4 class="font-cinzel text-lg font-bold text-white">${item.title}</h4>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+      <form id="booking-form" class="form-grid">
+        <div class="form-group">
+          <label for="client-name">Seu Nome *</label>
+          <input type="text" id="client-name" required placeholder="Digite seu nome completo">
+        </div>
 
-        // FILTER GALLERY BUTTONS
-        function filterGallery(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-gold', 'text-black');
-                btn.classList.add('bg-dark-800', 'text-gray-300');
-            });
-            event.target.classList.remove('bg-dark-800', 'text-gray-300');
-            event.target.classList.add('bg-gold', 'text-black');
-            renderGallery(category);
-        }
+        <div class="form-group">
+          <label for="tattoo-placement">Local do Corpo *</label>
+          <input type="text" id="tattoo-placement" required placeholder="Ex: Antebraço, Costas, Canela">
+        </div>
 
-        // RENDER FORUM COMMENTS
-        function renderComments() {
-            const list = document.getElementById('commentsList');
-            list.innerHTML = '';
+        <div class="form-group">
+          <label for="tattoo-size">Tamanho Aproximado (cm)</label>
+          <input type="text" id="tattoo-size" placeholder="Ex: 15cm x 10cm">
+        </div>
 
-            forumComments.forEach(comment => {
-                const card = document.createElement('div');
-                card.className = "bg-dark-900 border border-dark-700 p-4 rounded-xl space-y-2";
-                card.innerHTML = `
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <span class="font-bold text-white text-sm">${comment.author}</span>
-                            <span class="text-yellow-500 text-xs">${'⭐'.repeat(comment.rating)}</span>
-                        </div>
-                        <span class="text-xs text-gray-500">${comment.date}</span>
-                    </div>
-                    <p class="text-gray-300 text-sm">${comment.text}</p>
-                `;
-                list.appendChild(card);
-            });
-        }
+        <div class="form-group">
+          <label for="preferred-date">Data Preferencial</label>
+          <input type="date" id="preferred-date">
+        </div>
 
-        // ADD NEW COMMENT
-        function handleAddComment(e) {
-            e.preventDefault();
-            const author = document.getElementById('commentAuthor').value;
-            const rating = parseInt(document.getElementById('commentRating').value);
-            const text = document.getElementById('commentText').value;
+        <div class="form-group full-width">
+          <label for="tattoo-desc">Descrição da Ideia / Estilo *</label>
+          <textarea id="tattoo-desc" rows="4" required placeholder="Descreva brevemente a sua ideia, elementos e estilo desejado..."></textarea>
+        </div>
 
-            forumComments.unshift({
-                author: author,
-                rating: rating,
-                text: text,
-                date: "Agora mesmo"
-            });
+        <div class="form-group full-width">
+          <button type="submit" class="btn btn-whatsapp full-btn">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Orçamento para o WhatsApp
+          </button>
+        </div>
+      </form>
+    </section>
 
-            renderComments();
-            e.target.reset();
-        }
+    <!-- TRANSMISSÃO / YOUTUBE LIVE -->
+    <section id="live" class="card">
+      <h2 class="section-title"><i class="fa-brands fa-youtube"></i> Transmissão ao Vivo / Bastidores</h2>
+      <p class="section-desc">Acompanhe sessões ao vivo, novidades e processos de criação em nosso canal do YouTube.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=UC_YOUR_CHANNEL_ID" title="YouTube Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
 
-        // HANDLE APPOINTMENT & WHATSAPP REDIRECT
-        function handleBooking(e) {
-            e.preventDefault();
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const style = document.getElementById('tattooStyle').value;
-            const placement = document.getElementById('bodyPlacement').value;
-            const date = document.getElementById('preferredDate').value;
-            const time = document.getElementById('preferredTime').value;
-            const idea = document.getElementById('tattooIdea').value;
+    <!-- FÓRUM & COMENTÁRIOS -->
+    <section id="forum" class="card">
+      <h2 class="section-title"><i class="fa-solid fa-comments"></i> Fórum & Dúvidas Frequentes</h2>
+      <p class="section-desc">Deixe sua pergunta ou comentário sobre cuidados pós-tattoo, cicatrização e ideias.</p>
 
-            // Save to local admin state
-            const appointmentData = { name, phone, style, placement, date, time, idea };
-            localAppointments.unshift(appointmentData);
-            updateAdminAppointmentsList();
+      <form id="forum-form" class="forum-form">
+        <input type="text" id="comment-author" placeholder="Seu nome" required>
+        <textarea id="comment-text" rows="3" placeholder="Escreva sua mensagem ou dúvida..." required></textarea>
+        <button type="submit" class="btn btn-gold">Publicar Comentário</button>
+      </form>
 
-            // Build WhatsApp Message
-            const message = `*NOVO PRÉ-AGENDAMENTO DO SITE*%0A%0A` +
-                            `👤 *Nome:* ${encodeURIComponent(name)}%0A` +
-                            `📞 *Telefone:* ${encodeURIComponent(phone)}%0A` +
-                            `🎨 *Estilo:* ${encodeURIComponent(style)}%0A` +
-                            `📍 *Local/Tamanho:* ${encodeURIComponent(placement)}%0A` +
-                            `📅 *Data Preferida:* ${encodeURIComponent(date)}%0A` +
-                            `⏰ *Horário:* ${encodeURIComponent(time)}%0A` +
-                            `📝 *Ideia:* ${encodeURIComponent(idea || 'Não informada')}`;
+      <div id="comments-list" class="comments-list">
+        <!-- Comentários inseridos via JS -->
+      </div>
+    </section>
 
-            const whatsappUrl = `https://wa.me/5511961920170?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
+  </main>
 
-        // ADMIN MODAL TOGGLE
-        function toggleAdminModal() {
-            const modal = document.getElementById('adminModal');
-            modal.classList.toggle('hidden');
-        }
+  <!-- MODAL ADMIN -->
+  <div id="admin-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="toggleAdminModal()">&times;</button>
 
-        // ADMIN ADD PHOTO TO GALLERY
-        function handleAdminAddPhoto(e) {
-            e.preventDefault();
-            const title = document.getElementById('adminPhotoTitle').value;
-            const category = document.getElementById('adminPhotoCategory').value;
-            const url = document.getElementById('adminPhotoUrl').value;
+      <div id="admin-login-view">
+        <h3 class="modal-title"><i class="fa-solid fa-lock"></i> Acesso Restrito</h3>
+        <p>Insira a palavra-passe do administrador para gerir a galeria.</p>
+        <form id="login-form">
+          <div class="form-group">
+            <input type="password" id="admin-pass" placeholder="Palavra-passe (Padrão: 1234)" required>
+          </div>
+          <button type="submit" class="btn btn-gold full-btn">Entrar</button>
+        </form>
+      </div>
 
-            galleryData.unshift({
-                id: Date.now(),
-                title: title,
-                category: category,
-                image: url
-            });
+      <div id="admin-panel-view" class="hidden">
+        <div class="admin-header">
+          <h3><i class="fa-solid fa-user-gear"></i> Painel de Controlo</h3>
+          <button class="btn-logout" onclick="logoutAdmin()">Sair</button>
+        </div>
 
-            renderGallery();
-            e.target.reset();
-            alert('Foto adicionada com sucesso na galeria!');
-        }
+        <form id="upload-form" class="admin-upload-form">
+          <h4>Adicionar Nova Foto</h4>
+          <div class="form-group">
+            <label for="img-title">Título / Estilo</label>
+            <input type="text" id="img-title" placeholder="Ex: Tattoo Blackwork" required>
+          </div>
+          <div class="form-group">
+            <label for="img-url">URL da Imagem</label>
+            <input type="url" id="img-url" placeholder="https://exemplo.com/imagem.jpg" required>
+          </div>
+          <button type="submit" class="btn btn-gold full-btn">Cadastrar Foto</button>
+        </form>
 
-        // UPDATE ADMIN APPOINTMENTS LIST
-        function updateAdminAppointmentsList() {
-            const container = document.getElementById('adminAppointmentsList');
-            if (localAppointments.length === 0) {
-                container.innerHTML = '<p class="text-gray-500 italic">Nenhum agendamento gravado na sessão atual.</p>';
-                return;
-            }
+        <h4>Fotos Cadastradas</h4>
+        <div id="admin-items-list" class="admin-items-list">
+          <!-- Lista para apagar fotos -->
+        </div>
+      </div>
 
-            container.innerHTML = localAppointments.map(app => `
-                <div class="bg-dark-900 border border-dark-700 p-3 rounded-lg">
-                    <p class="font-bold text-white">${app.name} (${app.phone})</p>
-                    <p class="text-gold">${app.style} - ${app.placement}</p>
-                    <p class="text-gray-400">Data: ${app.date} às ${app.time}</p>
-                </div>
-            `).join('');
-        }
+    </div>
+  </div>
 
-        // INITIALIZATION
-        window.onload = function() {
-            renderGallery();
-            renderComments();
-            updateAdminAppointmentsList();
-        };
-    </script>
+  <footer>
+    <p>© Caio Alexandre Tattoo. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-```
